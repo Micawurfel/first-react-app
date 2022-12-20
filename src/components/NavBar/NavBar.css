@@ -6,7 +6,6 @@
 li{
     list-style-type: none;
     float: left;
-    background-color: bisque;
     margin: 1rem;
 }
 
@@ -16,5 +15,5 @@ a{
 }
 
 .navbar {
-    background-color: aquamarine;
+    background-color: gainsboro;
 }

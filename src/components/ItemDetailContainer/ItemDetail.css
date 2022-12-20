@@ -1,0 +1,29 @@
+/* counter */
+
+.counterContainer{
+    background-color: white;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: space-between;
+    margin: 10px;
+    border: 2px black solid;
+}
+.counterContainer button{
+    font-weight: 600;
+}
+
+.counterContainer .number{
+    padding: 0 20px;
+}
+
+/* card */
+.card{
+    width: 20rem;
+    margin: 20px;
+}
+
+/* list container */
+.containerList{
+    display: flex;
+    flex-flow: row wrap;
+}
