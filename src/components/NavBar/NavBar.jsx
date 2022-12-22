@@ -1,25 +1,25 @@
 import React from "react";
 import './NavBar.css';
 import logo from '../../assets/img/logo.png'
-import CartWidget from "./CartWidget";
+import CartWidget from "../Cart/CartWidget";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return(
         <div className="navbar container-fluid">
             <div>
-                <a href="#">
+                <Link to='/'>
                     <img className="imgLogo" src={logo} alt="logo" />
-                </a>
+                </Link>
             </div>
             
             <ul>
-                <Link className="nav-item" to={`/categoria`}>
-                    Categorias
-                </Link>
-                <Link className="nav-item" to={`/detalle`}>
-                    Categorias 2
-                </Link>
+                <li>
+                    <Link className="nav-item" to='/categoria/top'>Remeras</Link>
+                </li>
+                <li>
+                    <Link className="nav-item" to='/categoria/bottom'> Pantalones </Link>
+                </li>
             </ul>
 
             <CartWidget/>
