@@ -6,11 +6,10 @@ const ItemDetail = ({item}) => {
 
     const {addToCart} = useCartContext()
 
-    const onAdd = (cant) => {
-        addToCart(item, cant)
-    }
 
-    console.log(addToCart)
+    const onAdd = (cant) => {
+        addToCart({item: item, quantity: cant})
+    } 
 
     return(
         <>

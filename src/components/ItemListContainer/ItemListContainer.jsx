@@ -2,29 +2,33 @@ import React from "react"
 import ItemList from "./ItemList"
 import '../ItemDetailContainer/ItemDetail.css';
 import { useState, useEffect} from "react";
-import {getFetch} from "../../utils/mock" 
 import { useParams } from "react-router-dom";
+import { getFirestore } from "../../services/getFirebase";
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const {idCategoria} = useParams()
 
     useEffect(() => {
+
         if(idCategoria){
-
-            getFetch
-            .then(data => {
-                setProductos( data.filter( producto => producto.category === idCategoria) )
+            const db = getFirestore()
+            db.collection('item').where('category', '==', idCategoria).get()
+            .then(resp => {
+                setProductos( resp.docs.map( producto => ({ id: producto.id, ...producto.data() })))
             })
-            .catch (err => console.log(err)) 
-
-        }else {
-            getFetch
-            .then(data => {
-                setProductos(data)
-            })
-            .catch (err => console.log(err))   
+            .catch(err => console.log(err))
         }
+        else {
+            const dataBase = getFirestore()
+            dataBase.collection('item').get()
+            .then(resp => {
+                setProductos( resp.docs.map( producto => ({ id: producto.id, ...producto.data() })))
+            })
+            .catch(err => console.log(err))
+
+        }
+
     },[idCategoria])
     
     return(

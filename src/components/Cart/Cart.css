@@ -1,0 +1,11 @@
+.cartContainer{
+    background-color: antiquewhite;
+    margin: 20px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+.cartContainer img{
+    width: 100px;
+}

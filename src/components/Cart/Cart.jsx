@@ -1,21 +1,19 @@
 import React from "react";
 import { useCartContext } from "../../context/cartContext";
+import CartDetail from "./CartDetail";
 
 const Cart = () => {
 
-    const {cartList} = useCartContext
+    const {cartList} = useCartContext()
+
     console.log(cartList)
 
     return(
         <>
             <h1>Carrito de Compras</h1>
-            <div>
-                {/* {cartList.map = (item) => <h2>{item.item.nombre}</h2>
-                
-                } */}
-
-            </div>
-        </>
+            {cartList.map(item =>  <CartDetail item={item} key={item.id} />)}
+                                    
+        </> 
     )
 
 }
