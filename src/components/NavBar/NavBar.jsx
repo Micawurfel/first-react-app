@@ -15,10 +15,13 @@ const NavBar = () => {
             
             <ul>
                 <li>
-                    <Link className="nav-item" to='/categoria/top'>Remeras</Link>
+                    <Link className="nav-item" to='/categoria/tops'>Tops</Link>
                 </li>
                 <li>
-                    <Link className="nav-item" to='/categoria/bottom'> Pantalones </Link>
+                    <Link className="nav-item" to='/categoria/bottoms'> Bottoms </Link>
+                </li>
+                <li>
+                    <Link className="nav-item" to='/categoria/abrigos'>Abrigos</Link>
                 </li>
             </ul>
 

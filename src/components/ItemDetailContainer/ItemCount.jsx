@@ -12,9 +12,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const Aumentar = () => {
         if (contador < stock) {
             setContador(contador + 1)
-        } else {
-            alert("no hay mas stock")
-        }
+        } 
     }
 
     const Reducir = () => {
@@ -31,27 +29,39 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     return(
         <>
-            <div className="counterContainer">
-                <button className="btn" onClick={Reducir}>-</button>
-                <h4 className="number">{contador} </h4>
-                <button className="btn" onClick={Aumentar}>+</button>
-            </div>
-            <div>
-                {cambiarBoton ?
-                    <button onClick={AddCart} className="btn btn-outline-primary">Agragar al carrito</button>
-                    :
-                    <div>
-                        <Link to={'/'}>
-                            <button className="btn btn-outline-success"> Seguir comprando</button> 
-                        </Link>
-                        <Link to={'/carrito'}>
-                            <button className="btn btn-outline-danger">  Terminar compra </button> 
-                        </Link>
+            <div >
+            { stock == 0 ? 
+                <div>
+                    <button className="btn btn-outline-danger disabled"> No hay mas stock </button>
+                    <Link to={'/'}>
+                        <button className="btn btn-outline-success"> Seguir comprando</button> 
+                    </Link>
+                </div>
+                :
+                <div>
+                    <div className="counterContainer">
+                        <button className="btn" onClick={Reducir}>-</button>
+                        <h4 className="number">{contador} </h4>
+                        <button className="btn" onClick={Aumentar}>+</button>
                     </div>
-                }
+                    {cambiarBoton ?
+                        <button onClick={AddCart} className="btn btn-outline-primary">Agragar al carrito</button>
+                        :
+                        <div>
+                            <Link to={'/'}>
+                                <button className="btn btn-outline-success"> Seguir comprando</button> 
+                            </Link>
+                            <Link to={'/carrito'}>
+                                <button className="btn btn-outline-danger">  Terminar compra </button> 
+                            </Link>
+                        </div>
+                    }
+                </div>
+            }   
             </div>
         </>
     )
 }
 
 export default ItemCount
+

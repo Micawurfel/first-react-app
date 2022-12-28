@@ -13,9 +13,9 @@ const ItemListContainer = () => {
         
         const db = getFirestore()
         const newDB = idCategoria ?
-                                db.collection('items').where('category', '==', idCategoria)
+                                db.collection('productos').where('category', '==', idCategoria)
                                 :
-                                db.collection('items')
+                                db.collection('productos')
         newDB.get()
         .then(resp => {
             setProductos( resp.docs.map( producto => ({ id: producto.id, ...producto.data() })))

@@ -12,7 +12,7 @@ const {id} = useParams()
     useEffect(() => {
 
         const db = getFirestore()
-        db.collection('item').doc(id).get()
+        db.collection('productos').doc(id).get()
         .then(resp => {
             setItem({ id, ...resp.data() }) 
         })

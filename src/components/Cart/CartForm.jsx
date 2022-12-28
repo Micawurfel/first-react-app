@@ -4,8 +4,8 @@ const CartForm = ({handleOnChange, handleOnSubmit, setFormData}) => {
 
     return (
         <>
-            <form 
-                className="form-group mt-4" 
+            <form
+                className="form-group mt-4 me-4" 
                 onSubmit={handleOnSubmit}
                 onChange={handleOnChange} 
             >

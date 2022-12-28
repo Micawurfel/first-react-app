@@ -58,12 +58,12 @@ const Cart = () => {
         //añadir productos
 
         // const producto = {
-        //     category: 'tops',
-        //     title: 'Camiseta rayada',
-        //     description: 'Camiseta con rayas blancas y negras' ,
-        //     price: 9,
-        //     stock: 20,
-        //     photoURL: 'https://img.ltwebstatic.com/images3_pi/2020/05/07/158883849921561561f6cbe0805d57910b35e0df60_thumbnail_900x.webp'
+        //     category: 'bottoms',
+        //     title: 'Jeans negro',
+        //     description: 'Jeans de pierna ancha de cintura alta' ,
+        //     price: 27,
+        //     stock: 10,
+        //     photoURL: 'https://img.ltwebstatic.com/images3_pi/2022/05/17/1652767797500e5d8f32aca00ee9b84a1c4c0706ed_thumbnail_900x.webp'
         // }
 
         // db.collection("productos").add(producto)

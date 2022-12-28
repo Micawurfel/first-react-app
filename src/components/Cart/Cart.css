@@ -1,5 +1,5 @@
 .cartContainer{
-    background-color: antiquewhite;
+    background-color: #f4f4f4 ;
     margin: 20px;
     display: flex;
     flex-flow: row;
@@ -8,4 +8,13 @@
 
 .cartContainer img{
     width: 100px;
+}
+
+.cartIconQuantity {
+    background-color: red;
+    padding: 0.5px 4.5px ;
+    border-radius: 50px;
+    position: relative;
+    bottom: 30px;
+    right: 18px;
 }
