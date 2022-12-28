@@ -21,26 +21,32 @@ export default function CartContextProvider ({children}) {
     const removeItem = (item) => {
         const removeProduct = cartList.filter(i => i.item.id !== item.item.id)
         setCartList([...removeProduct])
-        console.log(cartList)
     }
 
 
     const totalQuantity = () => {
-        return cartList.reduce((total, item) => total + item.quantity, 0 )
-    }
-    const totalPrice = (item) => {
-        return cartList.reduce(item.price * item.quantity )
+        return cartList.reduce((acum, value) => acum + value.quantity, 0 )
     }
 
+
+    const totalPrice = () =>{
+        return cartList.reduce((acum, value)=> acum + (value.item.price * value.quantity), 0 )
+    }
+
+    const borrarLista = () => {
+        cartList([])
+    }
+    
     return(
         <cartContext.Provider value={{
             cartList, 
             addToCart,
             removeItem,
             totalQuantity, 
-            totalPrice
+            totalPrice, 
+            borrarLista
         }}>
-            {children}
+                {children}
         </cartContext.Provider>
     )
 }

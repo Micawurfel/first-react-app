@@ -10,24 +10,17 @@ const ItemListContainer = () => {
     const {idCategoria} = useParams()
 
     useEffect(() => {
-
-        if(idCategoria){
-            const db = getFirestore()
-            db.collection('item').where('category', '==', idCategoria).get()
-            .then(resp => {
-                setProductos( resp.docs.map( producto => ({ id: producto.id, ...producto.data() })))
-            })
-            .catch(err => console.log(err))
-        }
-        else {
-            const dataBase = getFirestore()
-            dataBase.collection('item').get()
-            .then(resp => {
-                setProductos( resp.docs.map( producto => ({ id: producto.id, ...producto.data() })))
-            })
-            .catch(err => console.log(err))
-
-        }
+        
+        const db = getFirestore()
+        const newDB = idCategoria ?
+                                db.collection('items').where('category', '==', idCategoria)
+                                :
+                                db.collection('items')
+        newDB.get()
+        .then(resp => {
+            setProductos( resp.docs.map( producto => ({ id: producto.id, ...producto.data() })))
+        })
+        .catch(err => console.log(err))
 
     },[idCategoria])
     

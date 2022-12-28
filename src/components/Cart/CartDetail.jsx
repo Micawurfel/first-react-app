@@ -18,7 +18,6 @@ return (
             <p>Cantidad: {item.quantity}</p>
             <p>Precio: {item.item.price}$</p>
         </div>
-        {/* <button >               */}
         <button onClick={()=>removeItem(item)} style={{border:"none", backgroundColor: "transparent"}}>
             <FontAwesomeIcon icon={faTrash} style={{fontSize:"26px", margin:"10px"}}/>
         </button>
