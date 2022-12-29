@@ -10,3 +10,7 @@ The project is an ecommerce invented to put into practice the main concepts of R
 
 components, props, events, hooks, context, routing, firebase,  
 
+### Demo
+
+https://calm-tapioca-6d7b8a.netlify.app/ 
+
