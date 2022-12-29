@@ -37,6 +37,8 @@ const Cart = () => {
             return{id, title, price}
         })
 
+        alert("Tu compra ha sido realizada")
+
         const db = getFirestore()
         db.collection("orders").add(orden)
         .then((docRef) => {

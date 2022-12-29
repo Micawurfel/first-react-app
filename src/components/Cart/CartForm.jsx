@@ -15,6 +15,7 @@ const CartForm = ({handleOnChange, handleOnSubmit, setFormData}) => {
                         className="form-control"
                         type="text" 
                         placeholder="Imgrese su nombre"
+                        required
                     />
                     <input 
                         name='email'
@@ -22,6 +23,7 @@ const CartForm = ({handleOnChange, handleOnSubmit, setFormData}) => {
                         className="form-control mt-4"
                         type="email" 
                         placeholder="Ingrese su email"
+                        required
                     />
                     <input 
                         name='phone'
@@ -29,9 +31,10 @@ const CartForm = ({handleOnChange, handleOnSubmit, setFormData}) => {
                         className="form-control mt-4"
                         type="phone" 
                         placeholder="Ingrese su numero de telefono"
+                        required
                     />
                     <input 
-                        className="btn btn-dark mt-4"
+                        className="btn btn-dark mt-4 mx-auto"
                         type="submit" 
                         value="Comprar"                
                     />

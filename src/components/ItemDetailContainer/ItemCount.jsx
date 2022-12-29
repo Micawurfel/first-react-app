@@ -45,14 +45,14 @@ const ItemCount = ({stock, initial, onAdd}) => {
                         <button className="btn" onClick={Aumentar}>+</button>
                     </div>
                     {cambiarBoton ?
-                        <button onClick={AddCart} className="btn btn-outline-primary">Agragar al carrito</button>
+                        <button onClick={AddCart} className="btn btn-dark">Agragar al carrito</button>
                         :
                         <div>
                             <Link to={'/'}>
-                                <button className="btn btn-outline-success"> Seguir comprando</button> 
+                                <button className="btn btn-dark mt-2">Seguir comprando</button> 
                             </Link>
                             <Link to={'/carrito'}>
-                                <button className="btn btn-outline-danger">  Terminar compra </button> 
+                                <button className="btn btn-outline-dark mt-2"> Terminar compra </button> 
                             </Link>
                         </div>
                     }
